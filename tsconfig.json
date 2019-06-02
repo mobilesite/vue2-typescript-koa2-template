@@ -1,17 +1,18 @@
 {
-  "allowJs": true,
-  "allowSyntheticDefaultImports": true,
+
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
     "strict": true,
     "jsx": "preserve",
     "importHelpers": true,
-    "moduleResolution": "node",
-    "experimentalDecorators": true,
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
+    "downlevelIteration": true,
     "baseUrl": ".",
     "types": [
       "webpack-env",

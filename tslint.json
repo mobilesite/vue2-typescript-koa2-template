@@ -1,5 +1,5 @@
 {
-  "defaultSeverity": "warning",
+  "defaultSeverity": "error",
   "extends": [
     "tslint:recommended"
   ],
@@ -8,12 +8,26 @@
       "node_modules/**"
     ]
   },
+  "jsRules": {},
   "rules": {
-    "quotemark": [true, "single"],
-    "indent": [true, "spaces", 2],
-    "interface-name": false,
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
     "ordered-imports": false,
     "object-literal-sort-keys": false,
-    "no-consecutive-blank-lines": false
-  }
+    "no-console": false,
+    "member-ordering": false,
+    "max-line-length": false,
+    "no-bitwise": false,
+    "no-namespace": false,
+    "no-empty-interface": false,
+    "no-empty": false
+  },
+  "rulesDirectory": []
 }
