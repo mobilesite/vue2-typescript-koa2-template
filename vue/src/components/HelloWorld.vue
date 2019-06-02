@@ -1,18 +1,19 @@
-<template>
-  <div class="hello-world">
-    This is Hello World Component
-  </div>
-</template>
+class as div as template; = 'hello-world' >
+    This; is; Hello; World; Component
+  < /div>
+< /template>
 
-<script>
-export default {
-  name: 'HelloWorld',
+< script; lang = 'ts' > ;
+import { Component, Prop, Vue } from 'vue-property-decorator';
+
+@Component
+export default class HelloWorld extends Vue {
 }
-</script>
+/script> as 
 
-<style scoped lang="less">
-.hello-world {
-  text-align: center;
+< style; scoped; lang = 'less' >
+.hello - world; {
+  text - align; : center;
   color: red;
 }
-</style>
+/style> as ;

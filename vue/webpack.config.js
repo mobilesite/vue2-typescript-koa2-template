@@ -16,7 +16,7 @@ let webpackConfig = {
   mode: isProd ? 'production' : 'development',
   stats: 'minimal',
   entry: {
-    app: [resolvePath('./src/main.js')]
+    app: [resolvePath('./src/main.ts')]
   },
   output: {
     filename: '[name].[hash:8].js',
@@ -24,7 +24,7 @@ let webpackConfig = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.ts', '.vue', '.js', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolvePath('src'),
@@ -35,6 +35,23 @@ let webpackConfig = {
       {
         test: /\.vue$/,
         loader: 'vue-loader'
+      },
+      {
+        test: /\.ts$/,
+        exclude: /node_modules/,
+        enforce: 'pre',
+        loader: 'tslint-loader',
+        options: {
+          "fix": true
+        }
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
       },
       {
         test: /\.js?$/,
@@ -64,7 +81,7 @@ let webpackConfig = {
           {
             loader: 'url-loader',
             options: {
-              limit: 8192, // 小于8k的图片自动转成base64格式
+              limit: 8192, // 小于8Kb的图片自动转成base64格式
               outputPath: 'images/' //图片打包后的文件夹
             }
           }

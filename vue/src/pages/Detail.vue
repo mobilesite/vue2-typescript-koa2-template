@@ -11,25 +11,34 @@
   </div>
 </template>
 
-<script>
-import {mapState} from 'vuex'
+<script lang='ts'>
+  import {
+    Component,
+    Prop,
+    Vue
+  } from 'vue-property-decorator';
+  import {
+    State,
+    Getter,
+    Action,
+    Mutation,
+    namespace,
+  } from 'vuex-class';
 
-export default {
-  name: 'Detail',
-
-  computed: mapState({
-    message: state => state.example.message
-  })
-}
+  @Component
+  export default class Detail extends Vue {
+    @State((state) => state.example.message) public message!: string;
+  }
 </script>
 
 <style scoped lang="less">
-h2 {
-  font-weight: normal;
-}
-.detail {
-  .link {
-    margin: 0 auto;
+  h2 {
+    font-weight: normal;
   }
-}
+
+  .detail {
+    .link {
+      margin: 0 auto;
+    }
+  }
 </style>

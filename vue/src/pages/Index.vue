@@ -9,42 +9,53 @@
   </div>
 </template>
 
-<script>
-import {mapState, mapActions} from 'vuex'
-import {sayHello} from '../utils/example'
-import HelloWorld from '../components/HelloWorld.vue'
+<script lang='ts'>
+  import {
+    Component,
+    Prop,
+    Vue
+  } from 'vue-property-decorator';
+  import {
+    State,
+    Getter,
+    Action,
+    Mutation,
+    namespace,
+  } from 'vuex-class';
+  import {
+    sayHello
+  } from '../utils/example';
+  import HelloWorld from '../components/HelloWorld.vue';
 
-export default {
-  name: 'Index',
+  @Component({
+    components: {
+      HelloWorld,
+    },
+  })
+  export default class Index extends Vue {
+    @State((state) => state.example.message) public message!: string;
+    @Action('example')
+    // [
+    // 'getNewMessage'
+    // ]
 
-  components: {
-    HelloWorld
-  },
-
-  computed: mapState({
-    message: state => state.example.message
-  }),
-
-  methods: mapActions('example', [
-    'getNewMessage'
-  ]),
-
-  created () {
-    let arr = [...[1,2,3], ...[4]]
-    console.log(arr)
-    sayHello()
-    this.$store.dispatch('example/initMessage')
+    public created() {
+      const arr = [...[1, 2, 3], ...[4]];
+      console.log(arr);
+      sayHello();
+      this.$store.dispatch('example/initMessage');
+    }
   }
-}
 </script>
 
 <style scoped lang="less">
-h2 {
-  font-weight: normal;
-}
-.wrapper {
-  .author {
-    text-align: center
+  h2 {
+    font-weight: normal;
   }
-}
+
+  .wrapper {
+    .author {
+      text-align: center
+    }
+  }
 </style>
