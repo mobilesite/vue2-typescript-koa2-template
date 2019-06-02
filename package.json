@@ -1,0 +1,63 @@
+{
+  "name": "spec-system",
+  "version": "1.0.0",
+  "description": "specification system",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon -e js --ignore vue/ index.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config vue/webpack.config.js",
+    "start": "node index.prod.js"
+  },
+  "keywords": [
+    "Koa2",
+    "Vue2",
+    "Typescript"
+  ],
+  "author": "",
+  "dependencies": {
+    "@babel/runtime": "^7.1.5",
+    "axios": "^0.18.0",
+    "chalk": "^2.4.1",
+    "glob": "^7.1.3",
+    "koa": "^2.6.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "vue": "^2.6.10",
+    "vue-class-component": "^7.0.2",
+    "vue-router": "^3.0.3",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.5",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "@babel/preset-env": "^7.1.5",
+    "babel-loader": "^8.0.4",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.1.3",
+    "css-loader": "^0.23.1",
+    "html-webpack-plugin": "^3.2.0",
+    "koa-webpack": "^5.1.1",
+    "koa2-history-api-fallback": "0.0.5",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "nodemon": "^1.18.6",
+    "style-loader": "^0.14.1",
+    "url-loader": "^1.1.2",
+    "vue-property-decorator": "^8.1.0",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "npm": ">= 5.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
