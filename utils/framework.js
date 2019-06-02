@@ -1,6 +1,5 @@
 /**
  * @file 框架本身使用的 utils 方法，和业务逻辑分开
- * @author wangyisheng@baidu.com (wangyisheng)
  */
 
 const chalk = require('chalk')

@@ -1,6 +1,5 @@
 /**
  * @file 测试中间件
- * @author wangyisheng@baidu.com (wangyisheng)
  */
 
 module.exports = async (ctx, next) => {

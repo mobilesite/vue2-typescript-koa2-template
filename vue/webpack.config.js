@@ -1,6 +1,5 @@
 /**
  * @file webpack 配置
- * @author wangyisheng@baidu.com (wangyisheng)
  */
 
 const path = require('path')

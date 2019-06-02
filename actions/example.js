@@ -1,6 +1,5 @@
 /**
  * @file 测试路由
- * @author wangyisheng@baidu.com (wangyisheng)
  */
 
 module.exports = {

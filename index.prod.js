@@ -1,6 +1,5 @@
 /**
  * @file 生产环境主入口
- * @author wangyisheng@baidu.com (wangyisheng)
  */
 
 const Koa = require('koa')
