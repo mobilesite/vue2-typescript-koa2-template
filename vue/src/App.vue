@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <img class="app-image" src="http://boscdn.bpc.baidu.com/assets/mip/codelab/shell/mashroom.jpg">
     <router-view />
   </div>

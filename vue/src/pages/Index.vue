@@ -27,6 +27,8 @@
   } from '../utils/example';
   import HelloWorld from '../components/HelloWorld.vue';
 
+  const example = namespace('example');
+
   @Component({
     components: {
       HelloWorld,
@@ -34,10 +36,7 @@
   })
   export default class Index extends Vue {
     @State((state) => state.example.message) public message!: string;
-    @Action('example')
-    // [
-    // 'getNewMessage'
-    // ]
+    @example.Action('getNewMessage') getNewMessage!: Function;
 
     public created() {
       const arr = [...[1, 2, 3], ...[4]];
