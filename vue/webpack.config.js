@@ -33,25 +33,39 @@ let webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
+        test: /\.tsx?$/,
+        exclude: [
+          /node_modules/,
+          /\.vue\.tsx?$/,
+        ],
+        enforce: 'pre',
+        use: [{
+          loader: 'tslint-loader'
+        }]
       },
       {
-        test: /\.ts$/,
+        test: /\.vue$/,
         exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'tslint-loader',
-        options: {
-          "fix": true
-        }
+        use: [{
+          loader: 'vue-loader',
+          options: {
+            loaders: {
+              ts: 'ts-loader!tslint-loader'
+            }
+          }
+        }]
       },
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-        }
+        exclude: [
+          /node_modules/,
+        ],
+        use: [{
+          loader: 'ts-loader',
+          options: {
+            appendTsSuffixTo: [/\.vue$/],
+          }
+        }]
       },
       {
         test: /\.js?$/,
@@ -77,15 +91,13 @@ let webpackConfig = {
       },
       {
         test: /\.(jpe?g|png|gif)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192, // 小于8Kb的图片自动转成base64格式
-              outputPath: 'images/' //图片打包后的文件夹
-            }
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192, // 小于8Kb的图片自动转成base64格式
+            outputPath: 'images/' //图片打包后的文件夹
           }
-        ]
+        }]
       }
     ]
   },
