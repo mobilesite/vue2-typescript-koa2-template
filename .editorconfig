@@ -1,0 +1,9 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = false # 这一项不能设置为true，因为它会导致vue文件的style和script块中的代码在格式化后末尾出现一个空行。
+trim_trailing_whitespace = true
