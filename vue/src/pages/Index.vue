@@ -9,7 +9,7 @@
   </div>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
   import {
     Component,
     Prop,
@@ -31,8 +31,8 @@
 
   @Component({
     components: {
-      HelloWorld,
-    },
+      HelloWorld
+    }
   })
   export default class Index extends Vue {
     @State((state) => state.example.message) public message!: string;
